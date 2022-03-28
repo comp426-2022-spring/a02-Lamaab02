@@ -68,7 +68,13 @@ function countFlips(array) {
     if(element == "heads") head++
     else tail++
   });
-  return {'heads': head, 'tails': tail}
+  if (head == 0) {
+    return {'tails': tail}
+  } else if (tail == 0) {
+    return {'heads': head}
+  } else {
+    return {'heads': head, 'tails': tail}
+  }
 }
 //console.log(countFlips(coinFlips(10)))
 
